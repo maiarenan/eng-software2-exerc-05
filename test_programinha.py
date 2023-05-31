@@ -1,5 +1,3 @@
-import pytest
-
 from programinha import Pessoa, Aluno, Professor
 
 def test_pessoa():
@@ -36,4 +34,3 @@ def test_apresentar_professor(capsys):
     professor.apresentar()
     out, err = capsys.readouterr()
     assert out == "Olá, meu nome é Pedro e tenho 40 anos.\nEu sou um professor e minha disciplina é Matemática.\n"
-    
