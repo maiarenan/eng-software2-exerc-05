@@ -27,8 +27,7 @@ def test_apresentar_aluno(capsys):
     aluno = Aluno("Maria", 20, "1234")
     aluno.apresentar()
     out, err = capsys.readouterr()
-    assert out == '''Olá, meu nome é Maria e tenho 20 anos.\n
-                    Eu sou um aluno e minha matrícula é 1234.\n'''
+    assert out == "Olá, meu nome é Maria e tenho 20 anos.\nEu sou um aluno e minha matrícula é 1234.\n"
 
 def test_apresentar_professor(capsys):
     professor = Professor("Pedro", 40, "Matemática")

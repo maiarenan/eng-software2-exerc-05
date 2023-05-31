@@ -1,0 +1,28 @@
+name: Testes do Programinha
+
+on: [push]
+
+jobs:
+  test:
+    name: Rodar Testes
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.x]
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+
+    - name: Configurar ambiente Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Instalar dependências
+      run: pip install -r requirements.txt
+
+    - name: Executar testes
+      run: python test_programinha.py
